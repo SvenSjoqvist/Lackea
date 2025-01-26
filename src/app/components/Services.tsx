@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Shield, Car, Sparkles, Wrench, Star, Handshake, Truck, Check, Clock, Phone } from 'lucide-react';
+import { Shield, Car, Sparkles, Wrench, Star, Handshake, Truck, Clock } from 'lucide-react';
 
 const CombinedSection = () => {
   const serviceDetails = [

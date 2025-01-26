@@ -54,7 +54,7 @@ const AboutUsSection: React.FC = () => {
                   <span className="text-xs md:text-base text-gray-300">Privat & Företagskunder</span>
                 </div>
                 <blockquote className="italic text-xs md:text-base text-gray-300">
-                  "Varje bil är mer än ett fordon - den är en berättelse."
+                  &quot;Varje bil är mer än ett fordon - den är en berättelse.&quot;
                 </blockquote>
               </div>
             </div>

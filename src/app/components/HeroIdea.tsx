@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import AnimatedLogo from "./AnimatedLogo";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
 import Image from "next/image";
