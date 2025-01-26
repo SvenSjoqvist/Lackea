@@ -81,7 +81,7 @@ const Hero = () => {
             {/* Background image with parallax effect using next/image */}
             <div className="hero-bg absolute top-0 left-0 w-full h-full z-0">
               <Image
-                src="/hero.jpg" // Replace with your image path
+                src="/Hero.jpg" 
                 alt="Car Painting Garage"
                 fill
                 priority

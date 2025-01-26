@@ -3,11 +3,11 @@ import Image from "next/image";
 
 // Brands data
 const brands = [
-  { name: "Sixt", logo: "/brands/sixt.png" },
-  { name: "Circle K", logo: "/brands/circlek.png" },
-  { name: "Land Rover", logo: "/brands/landrover.png" },
-  { name: "Hedin Bil", logo: "/brands/hedin.png" },
-  { name: "British Motorgroup", logo: "/brands/bmg.png" },
+  { name: "Sixt", logo: "/brands/Sixt.png" },
+  { name: "Circle K", logo: "/brands/CircleK.png" },
+  { name: "Land Rover", logo: "/brands/landRover.png" },
+  { name: "Hedin Bil", logo: "/brands/Hedin.png" },
+  { name: "British Motorgroup", logo: "/brands/Bmg.png" },
 ];
 
 const BrandLogos = () => {
