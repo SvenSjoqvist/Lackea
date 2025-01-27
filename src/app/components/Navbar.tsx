@@ -164,7 +164,7 @@ export default function Navbar() {
           >
             <Globe className="w-6 h-6" />
             <span className="text-lg font-medium">
-              {locale === "sv" ? "Svenska" : locale === "en" ? "English" : locale === "ar" ? "العربية" : "Español"}
+              {locale === "se" ? "Svenska" : locale === "en" ? "English" : locale === "ar" ? "العربية" : "Español"}
             </span>
           </button>
           {isLanguageMenuOpen && (
