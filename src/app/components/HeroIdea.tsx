@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,107 +7,148 @@ import Image from "next/image";
 
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
-
-  gsap.registerPlugin(ScrollTrigger);
+  const [isGsapRegistered, setIsGsapRegistered] = useState(false);
 
   useEffect(() => {
-    if (!isLoading) {
-      // Batch animations for better performance
-      const tl = gsap.timeline();
-      
-      tl.fromTo(".cover", 
-        { x: "0%" }, 
-        { x: "100%", duration: 1.5, ease: "power2.out" }
-      )
-      .fromTo(".hero-content",
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" },
-        "-=1"
-      )
-      .fromTo(".hero-title",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-        "-=0.5"
-      )
-      .fromTo(".hero-subtitle",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-        "-=0.7"
-      )
-      .fromTo(".hero-button",
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
-        "-=0.7"
-      );
-
-      // Parallax effect
-      ScrollTrigger.create({
-        animation: gsap.to(".hero-bg-inner", { y: "-20%" }),
-        trigger: ".hero-section",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      });
-
-      // Optimized sparkle effect with reduced properties
-      gsap.to(".hero-title", {
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        textShadow: "0 0 10px rgba(255,255,255,0.8)",
-      });
+    // Register GSAP plugin only once on client side
+    if (typeof window !== 'undefined' && !isGsapRegistered) {
+      gsap.registerPlugin(ScrollTrigger);
+      setIsGsapRegistered(true);
     }
-  }, [isLoading]);
 
-  const handleImageLoad = () => {
-    setIsLoading(false); // Trigger the animations when image is loaded
+    const init = async () => {
+      try {
+        // Load image and set loading state
+        const imagePromise = new Promise((resolve) => {
+          const img = new window.Image();
+          img.src = '/Herotest.webp';
+          img.onload = resolve;
+        });
+
+        await imagePromise;
+        setIsLoading(false);
+
+        // Run animations after image is loaded
+        if (isGsapRegistered) {
+          const tl = gsap.timeline({
+            defaults: { 
+              duration: 0.8,
+              ease: "power2.out"
+            }
+          });
+
+          tl.fromTo(".cover", 
+            { x: "0%" }, 
+            { x: "100%" }
+          ).fromTo(".hero-content", 
+            { opacity: 0, y: 20 }, 
+            { opacity: 1, y: 0 }, 
+            "-=0.5"
+          );
+
+          ScrollTrigger.create({
+            animation: gsap.to(".hero-bg-inner", { y: "-10%" }),
+            trigger: ".hero-section",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          });
+        }
+      } catch (error) {
+        console.error('Failed to initialize:', error);
+        setIsLoading(false);
+      }
     };
 
+    init();
+
+    return () => {
+      if (isGsapRegistered) {
+        ScrollTrigger.getAll().forEach(t => t.kill());
+      }
+    };
+  }, [isGsapRegistered]);
+
   return (
-    <div className="hero-section relative w-full h-screen overflow-hidden">
-      {/* Background container */}
+    <section className="hero-section relative w-full h-screen overflow-hidden">
+      {/* Background Images */}
       <div className="hero-bg absolute top-0 left-0 w-full h-[120%] overflow-hidden">
         <div className="hero-bg-inner relative w-full h-full">
+          {/* Desktop Image */}
           <Image
-            src="/Hero.webp"
+            src="/Herotest.webp"
             alt="Car Painting Garage"
             fill
             priority
             quality={75}
-            placeholder="blur"
-            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJyEkMj84OC8xOi8rLCpCREJFNS01QlVCX2JfYFhtYHR7em9zdXL/2wBDARUXFx4aHR4eHXJCOEJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnL/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-            sizes="100vw"
-            className="object-cover object-center"
-            style={{ 
-              transform: 'scale(1.2)',
-              willChange: 'transform'
+            sizes="(min-width: 1024px) 100vw, (min-width: 768px) 100vw, 100vw"
+            className="object-cover object-center hidden lg:block"
+            style={{
+              transform: 'scale(1.1)',
+              willChange: 'transform',
             }}
-            onLoad={handleImageLoad}
+          />
+          
+          {/* Tablet Image */}
+          <Image
+            src="/Hero-tablet.webp"
+            alt="Car Painting Garage"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover object-center hidden md:block lg:hidden"
+            style={{
+              transform: 'scale(1.1)',
+              willChange: 'transform',
+            }}
+          />
+          
+          {/* Mobile Image */}
+          <Image
+            src="/Hero-mobile.webp"
+            alt="Car Painting Garage"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover object-center block md:hidden"
+            style={{
+              transform: 'scale(1.1)',
+              willChange: 'transform',
+            }}
           />
         </div>
       </div>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10" />
+      <div 
+        className="absolute inset-0 bg-black/50 z-10"
+        style={{ willChange: 'opacity' }}
+      />
 
       {/* Loading cover */}
-      <div className="cover absolute top-0 left-0 w-full h-full bg-gray-900 z-20" />
+      {isLoading && (
+        <div className="cover absolute inset-0 bg-gray-900 z-20 transform" />
+      )}
 
       {/* Content */}
-      <div className="hero-content relative w-full h-full flex flex-col justify-center items-center text-center z-30 px-4">
-        <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 text-white opacity-0 max-w-4xl">
+      <div className="hero-content absolute inset-0 flex flex-col justify-center items-center text-center z-30 px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white max-w-4xl">
           Transform Your Car
         </h1>
-        <p className="hero-subtitle text-xl md:text-2xl mb-8 text-gray-200 opacity-0 max-w-2xl">
+        <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl">
           Expert car painting and refinishing services to make your vehicle shine like new.
         </p>
-        <button className="hero-button bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors opacity-0">
+        <button 
+          className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+          style={{ touchAction: 'manipulation' }}
+        >
           Book Now
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Hero;
+export default React.memo(Hero);

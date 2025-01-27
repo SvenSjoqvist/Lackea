@@ -20,6 +20,6 @@ export const config = {
   // - API routes (`/api/...`)
   // - Image files (`/brands/...`, `/images/...`, etc.)
   matcher: [
-    '/((?!_next|api|brands|images|favicon.ico|logo.svg|Hero.webp).*)',
+    '/((?!_next|api|brands|images|favicon.ico|logo.svg|Hero-tablet.webp|Hero-mobile.webp|Herotest.webp).*)',
   ],
 };
