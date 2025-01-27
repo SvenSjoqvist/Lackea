@@ -78,11 +78,11 @@ const Hero = () => {
             src="/Hero.webp"
             alt="Car Painting Garage"
             fill
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="object-cover object-center"
             style={{ transform: 'scale(1.2)' }} // Slightly larger to prevent edges showing
             loading="lazy"
-            onLoadingComplete={handleImageLoad} // Trigger animations after image load
+            onLoad={handleImageLoad} // Trigger animations after image load
           />
         </div>
       </div>
