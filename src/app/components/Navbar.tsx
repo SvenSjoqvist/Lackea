@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   const changeLanguage = (newLocale: string) => {
-    const path = newLocale === "sv" ? "/" : `/${newLocale}`;
+    const path = newLocale === "se" ? "/" : `/${newLocale}`;
     router.push(path);
     setIsLanguageMenuOpen(false);
   };
@@ -39,9 +39,9 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Controls */}
-      <div className="sm:hidden flex items-center space-x-4">
+      <div className="sm:hidden flex items-center space-x-4 relative">
         {/* Language Switcher (Mobile) */}
-        <div className="relative">
+        <div className="relative z-50">
           <button
             onClick={toggleLanguageMenu}
             className="text-white focus:outline-none"
@@ -54,16 +54,17 @@ export default function Navbar() {
           {isLanguageMenuOpen && (
             <div
               id="mobile-language-menu"
-              className="absolute top-10 right-0 bg-gray-800 rounded-lg shadow-lg py-2 w-32"
+              className="absolute top-10 right-0 bg-gray-800 rounded-lg shadow-lg py-2 w-32 z-50" // Ensure language menu has z-50
               role="menu"
             >
+              {/* Language options */}
               <div
                 role="menuitem"
                 tabIndex={0}
-                onClick={() => changeLanguage("sv")}
-                onKeyDown={(e) => e.key === "Enter" && changeLanguage("sv")}
+                onClick={() => changeLanguage("se")}
+                onKeyDown={(e) => e.key === "Enter" && changeLanguage("se")}
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
-                  locale === "sv" ? "font-bold text-yellow-400" : ""
+                  locale === "se" ? "font-bold text-yellow-400" : ""
                 }`}
                 aria-label="Switch to Swedish"
               >
@@ -125,8 +126,9 @@ export default function Navbar() {
           isMenuOpen
             ? "block absolute top-20 left-0 w-full bg-gray-800 py-4"
             : "hidden"
-        } sm:flex sm:items-center sm:space-x-8`}
+        } sm:flex sm:items-center sm:space-x-8 z-40`}
       >
+        {/* Links */}
         <Link
           href="#om-oss"
           className="block sm:inline-block text-lg font-medium hover:text-gray-400 transition-colors duration-300 py-2 sm:py-0 px-4 sm:px-0 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r from-yellow-400 to-orange-500 hover:after:w-full after:transition-all after:duration-300"
@@ -183,10 +185,10 @@ export default function Navbar() {
               <div
                 role="menuitem"
                 tabIndex={0}
-                onClick={() => changeLanguage("sv")}
-                onKeyDown={(e) => e.key === "Enter" && changeLanguage("sv")}
+                onClick={() => changeLanguage("se")}
+                onKeyDown={(e) => e.key === "Enter" && changeLanguage("se")}
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
-                  locale === "sv" ? "font-bold text-yellow-400" : ""
+                  locale === "se" ? "font-bold text-yellow-400" : ""
                 }`}
                 aria-label="Switch to Swedish"
               >
@@ -235,3 +237,4 @@ export default function Navbar() {
     </div>
   );
 }
+
