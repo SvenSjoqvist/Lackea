@@ -10,14 +10,6 @@ const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, []);
-
-  useEffect(() => {
     if (!isLoading) {
       // Initial animations
       gsap.fromTo(
@@ -72,6 +64,10 @@ const Hero = () => {
     }
   }, [isLoading]);
 
+  const handleImageLoad = () => {
+    setIsLoading(false); // Trigger the animations when image is loaded
+  };
+
   return (
     <div className="hero-section relative w-full h-screen overflow-hidden">
       {/* Background container with fixed height and overflow hidden */}
@@ -82,10 +78,11 @@ const Hero = () => {
             src="/Hero.webp"
             alt="Car Painting Garage"
             fill
-            priority
             sizes="100vw"
             className="object-cover object-center"
             style={{ transform: 'scale(1.2)' }} // Slightly larger to prevent edges showing
+            loading="lazy"
+            onLoadingComplete={handleImageLoad} // Trigger animations after image load
           />
         </div>
       </div>
