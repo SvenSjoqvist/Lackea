@@ -174,15 +174,17 @@ const ContactSection: React.FC = () => {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full bg-gray-900/50 text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                className="w-full bg-gray-900/50 text-white border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-y max-h-40"
                 required
               ></textarea>
-              <button 
-                type="submit" 
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center"
-              >
-                <Send className="mr-2" /> {t('sendButton')}
-              </button>
+              <div className="mt-8"> {/* Added margin-top to push the button lower */}
+                <button 
+                  type="submit" 
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all duration-300 flex items-center justify-center"
+                >
+                  <Send className="mr-2" /> {t('sendButton')}
+                </button>
+              </div>
             </form>
           </div>
         </div>

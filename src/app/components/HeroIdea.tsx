@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -96,16 +97,18 @@ const Hero = () => {
       <div className="cover absolute top-0 left-0 w-full h-full bg-gray-900 z-20" />
 
       {/* Content */}
-      <div className="hero-content relative w-full h-full flex flex-col justify-center items-center text-center z-30 px-4">
+      <div className="hero-content relative w-full h-full flex flex-col justify-end items-center text-center z-30 px-4 pb-20">
         <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 text-white opacity-0 max-w-4xl">
           {t("title")}
         </h1>
         <p className="hero-subtitle text-xl md:text-2xl mb-8 text-gray-200 opacity-0 max-w-2xl">
           {t("subtitle")}
         </p>
-        <button className="hero-button bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors opacity-0">
-          {t("button")}
-        </button>
+        <Link href="#kontakt" passHref>
+          <button className="hero-button bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors opacity-0">
+            {t('button')}
+          </button>
+        </Link>
       </div>
     </div>
   );
