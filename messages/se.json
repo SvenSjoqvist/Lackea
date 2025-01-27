@@ -154,5 +154,11 @@
           "aboutUs": "Om oss",
           "services": "Tjänster",
           "contact": "Kontakt"
-        }
+        },
+          "hero": {
+            "title": "Transformera Din Bil",
+            "subtitle": "Expertbilmålning och omlackeringstjänster för att få din bil att glänsa som ny.",
+            "button": "Boka Nu"
+          }
+        
   }

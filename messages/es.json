@@ -154,6 +154,11 @@
         "aboutUs": "Sobre nosotros",
         "services": "Servicios",
         "contact": "Contacto"
+      },
+      "hero": {
+        "title": "Transforma Tu Coche",
+        "subtitle": "Servicios expertos de pintura y repintado de coches para hacer que tu vehículo brille como nuevo.",
+        "button": "Reservar Ahora"
       }
     
   }

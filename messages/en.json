@@ -156,7 +156,13 @@
       "aboutUs": "About Us",
       "services": "Services",
       "contact": "Contact"
-    }
+    },
+      "hero": {
+        "title": "Transform Your Car",
+        "subtitle": "Expert car painting and refinishing services to make your vehicle shine like new.",
+        "button": "Book Now"
+      }
+    
   
 
 }
