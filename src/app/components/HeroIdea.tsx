@@ -1,17 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
 
 const Hero = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Register ScrollTrigger plugin
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    // Simulate a loading delay
     const timeout = setTimeout(() => {
       setIsLoading(false);
     }, 500);
@@ -21,7 +19,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (!isLoading) {
-      // Animation when loading is complete
+      // Initial animations
       gsap.fromTo(
         ".cover",
         { x: "0%" },
@@ -34,7 +32,6 @@ const Hero = () => {
         { opacity: 1, y: 0, duration: 1.5, ease: "power2.out", delay: 1 }
       );
 
-      // Additional animations for a more dynamic effect
       gsap.fromTo(
         ".hero-title",
         { opacity: 0, y: 20 },
@@ -53,8 +50,8 @@ const Hero = () => {
         { opacity: 1, y: 0, duration: 1, ease: "power2.out", delay: 2.1 }
       );
 
-      // Background image parallax effect
-      gsap.to(".hero-bg", {
+      // Fixed parallax effect
+      gsap.to(".hero-bg-inner", {
         y: "-20%",
         scrollTrigger: {
           trigger: ".hero-section",
@@ -64,7 +61,7 @@ const Hero = () => {
         },
       });
 
-      // Sparkle effect for the title
+      // Sparkle effect
       gsap.to(".hero-title", {
         duration: 2,
         repeat: -1,
@@ -76,39 +73,42 @@ const Hero = () => {
   }, [isLoading]);
 
   return (
-        <>
-          <div className="hero-section relative w-screen min-h-screen h-screen pt-20 overflow-hidden">
-            {/* Background image with parallax effect using next/image */}
-            <div className="hero-bg absolute top-0 left-0 w-full h-full z-0">
-              <Image
-                src="/Hero.jpg" 
-                alt="Car Painting Garage"
-                fill
-                priority
-                className="object-cover object-bottom" // Adjusted here
-              />
-            </div>
+    <div className="hero-section relative w-full h-screen overflow-hidden">
+      {/* Background container with fixed height and overflow hidden */}
+      <div className="hero-bg absolute top-0 left-0 w-full h-[120%] overflow-hidden">
+        {/* Inner container for parallax movement */}
+        <div className="hero-bg-inner relative w-full h-full">
+          <Image
+            src="/Hero.webp"
+            alt="Car Painting Garage"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+            style={{ transform: 'scale(1.2)' }} // Slightly larger to prevent edges showing
+          />
+        </div>
+      </div>
 
-            {/* Overlay for better text visibility */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+      {/* Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10" />
 
-            {/* Cover div that will slide out */}
-            <div className="cover absolute top-0 left-0 w-full h-full bg-gray-900 z-20"></div>
+      {/* Loading cover */}
+      <div className="cover absolute top-0 left-0 w-full h-full bg-gray-900 z-20" />
 
-            {/* Hero content */}
-            <div className="hero-content relative w-full h-full flex flex-col justify-center items-center text-center z-30">
-              <h1 className="hero-title text-6xl font-bold mb-6 text-white">
-                Transform Your Car
-              </h1>
-              <p className="hero-subtitle text-2xl mb-8 text-gray-200">
-                Expert car painting and refinishing services to make your vehicle shine like new.
-              </p>
-              <button className="hero-button bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-                Book Now
-              </button>
-            </div>
-          </div>
-        </>
+      {/* Content */}
+      <div className="hero-content relative w-full h-full flex flex-col justify-center items-center text-center z-30 px-4">
+        <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 text-white opacity-0 max-w-4xl">
+          Transform Your Car
+        </h1>
+        <p className="hero-subtitle text-xl md:text-2xl mb-8 text-gray-200 opacity-0 max-w-2xl">
+          Expert car painting and refinishing services to make your vehicle shine like new.
+        </p>
+        <button className="hero-button bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors opacity-0">
+          Book Now
+        </button>
+      </div>
+    </div>
   );
 };
 

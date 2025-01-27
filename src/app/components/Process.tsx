@@ -1,33 +1,31 @@
 "use client";
 import { useState } from "react";
 import { ChevronDown, ShieldCheck, Settings, Sun, Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const ProcessSection = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
+  const t = useTranslations("ProcessSection");
 
   const steps = [
     {
-      title: "Skadebesiktning",
-      description:
-        "Vi börjar med en noggrann skadebesiktning för att identifiera alla skador på din bil. Vi erbjuder flexibla alternativ: antingen hämtar vi din bil på en plats som passar dig, eller så kan du lämna den hos oss. Under besiktningen dokumenterar vi skadorna och diskuterar med dig vilka reparationer som behövs. Vi tar även hänsyn till eventuella önskemål från ditt försäkringsbolag för att säkerställa en smidig process.",
+      title: t("steps.inspection.title"),
+      description: t("steps.inspection.description"),
       icon: <ShieldCheck className="w-6 h-6 text-indigo-500" />,
     },
     {
-      title: "Bilreparation",
-      description:
-        "Efter skadebesiktningen påbörjar vi reparationen av din bil. Vårt team av certifierade tekniker använder moderna verktyg och högkvalitativa material för att återställa din bil till dess ursprungliga skick. Vi samarbetar nära med dig och ditt försäkringsbolag för att säkerställa att alla reparationer utförs enligt överenskommelsen. Under hela processen håller vi dig informerad om framstegen.",
+      title: t("steps.repair.title"),
+      description: t("steps.repair.description"),
       icon: <Settings className="w-6 h-6 text-teal-500" />,
     },
     {
-      title: "Polering och Slipning",
-      description:
-        "När reparationerna är klara går din bil till vår poleringsavdelning. Här slipar och polerar vi bilens ytor för att återställa dess glans och skydd. Vi använder professionella produkter och tekniker för att säkerställa en fläckfri finish. Detta steg är avgörande för att ge din bil en fräsch och som ny look, samt för att skydda den mot framtida skador.",
+      title: t("steps.polishing.title"),
+      description: t("steps.polishing.description"),
       icon: <Sun className="w-6 h-6 text-amber-500" />,
     },
     {
-      title: "Kvalitetskontroll och Leverans",
-      description:
-        "Innan vi levererar din bil utför vi en noggrann kvalitetskontroll. Vi kontrollerar att färgen matchar perfekt, att lacken är slät och att alla reparationer är utförda enligt högsta standard. Efter en sista tvätt och detaljgranskning är din bil redo att återvända till dig. Vi strävar efter att överraska dig med en bil som ser och känns som ny.",
+      title: t("steps.qualityControl.title"),
+      description: t("steps.qualityControl.description"),
       icon: <Check className="w-6 h-6 text-emerald-500" />,
     },
   ];
@@ -37,16 +35,16 @@ const ProcessSection = () => {
   };
 
   return (
-    <section className="process-section bg-gray-50 py-16">
+    <section id="process" className="process-section bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
-          Vår Process för Bilreparation
+          {t("title")}
         </h2>
 
         {/* Section Subtitle */}
         <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-          Hos oss genomgår din bil en noggrann och strukturerad process för att säkerställa att den får den bästa möjliga vården. Läs mer om varje steg nedan.
+          {t("subtitle")}
         </p>
 
         {/* Accordion Steps */}

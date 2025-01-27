@@ -1,0 +1,156 @@
+{
+  "aboutUs": {
+    "title": "We treat your car like family",
+    "description": "Located in Botkyrka, south of Stockholm, we are a dedicated car painting company with a wide range of services and strong collaborations with car rental companies, car dealers, and gas stations.",
+    "keyPoints": {
+      "point1": "Plastic and sheet metal repairs",
+      "point2":  "Painting & wheel repairs",
+      "point3": "Windshield replacements & stone chip repairs",
+      "point4": "Reconditioning"
+    },
+    "location": {
+      "title": "Botkyrka",
+      "subtitle": "Strategically located"
+    },
+    "capacity": {
+      "title": "500",
+      "subtitle": "Car Capacity"
+    },
+    "customers": {
+      "title": "Private & Corporate Clients",
+      "quote": "Every car is more than a vehicle - it's a story."
+    }
+  },
+    "BrandLogos": {
+      "title": "Our Partners"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "Terrängvägen 8, 147 39 Tumba",
+      "email": "info@lackea.se",
+      "directNumber": "Direct number: +46 (0) 70 779 90 26",
+      "switchboard": "Switchboard: +46 (0) 8 684 410 20",
+      "openingHours": "Monday-Friday 8:00 AM - 5:00 PM",
+      "getInTouch": "Get in Touch",
+      "fullName": "Full Name",
+      "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone Number",
+      "messagePlaceholder": "Message",
+      "sendButton": "Send!"
+    },
+    "CTASection": {
+      "heading": "Why Choose Us",
+      "subheading": "We offer professional and reliable services that put you in focus.",
+      "reasons": {
+        "experienced": {
+          "title": "Experienced painting workshop",
+          "description": "With many years in the industry, we guarantee professional and reliable services."
+        },
+        "quality": {
+          "title": "High quality and excellent customer experience",
+          "description": "We always focus on quality and customer satisfaction."
+        },
+        "insurance": {
+          "title": "Collaborate with many insurance companies",
+          "description": "We make the process smooth for you through our partnerships with leading insurance companies."
+        },
+        "brands": {
+          "title": "Repair all car brands",
+          "description": "Regardless of car brand or model, we can help you with the repair."
+        },
+        "pickup": {
+          "title": "Pickup and return",
+          "description": "When booking, we offer both pickup and return to the location of your choice."
+        },
+        "damage": {
+          "title": "Damage with or without insurance",
+          "description": "We accept all types of damage, whether you have insurance or not."
+        },
+        "service": {
+          "title": "Quick service and warranty",
+          "description": "We offer fast and efficient repairs with a quality guarantee."
+        },
+        "contact": {
+          "title": "Contact us",
+          "description": "Do not hesitate to contact us for a free consultation or booking at +46 (0) 70 779 90 26"
+        }
+      }
+    },
+    "Navbar": {
+      "about": "About us",
+      "services": "Services",
+      "contact": "Our process",
+      "book": "Book now!"
+    },
+    "ProcessSection": {
+      "title": "Our Car Repair Process",
+      "subtitle": "With us, your car undergoes a thorough and structured process to ensure it receives the best possible care. Learn more about each step below.",
+      "steps": {
+        "inspection": {
+          "title": "Damage Inspection",
+          "description": "We start with a thorough damage inspection to identify all damages to your car. We offer flexible options: either we pick up your car at a location that suits you, or you can drop it off with us. During the inspection, we document the damages and discuss with you what repairs are needed. We also take into account any requests from your insurance company to ensure a smooth process."
+        },
+        "repair": {
+          "title": "Car Repair",
+          "description": "After the damage inspection, we begin the repair of your car. Our team of certified technicians uses modern tools and high-quality materials to restore your car to its original condition. We work closely with you and your insurance company to ensure that all repairs are carried out according to the agreement. Throughout the process, we keep you informed of the progress."
+        },
+        "polishing": {
+          "title": "Polishing and Grinding",
+          "description": "Once the repairs are completed, your car goes to our polishing department. Here, we grind and polish the car's surfaces to restore its shine and protection. We use professional products and techniques to ensure a flawless finish. This step is crucial to give your car a fresh, like-new look and to protect it from future damage."
+        },
+        "qualityControl": {
+          "title": "Quality Control and Delivery",
+          "description": "Before we deliver your car, we perform a thorough quality control. We check that the color matches perfectly, that the paint is smooth, and that all repairs have been carried out to the highest standard. After a final wash and detailed inspection, your car is ready to return to you. We strive to surprise you with a car that looks and feels like new."
+        }
+      }
+    },
+    "AutoSlider": {
+      "kundrecensioner": "Customer Reviews",
+      "reviews": [
+        {
+          "text": "Left my Tesla Model 3 for painting the trunk lid. Thought they did a great job. They also adjusted the trunk lid so it doesn't close the same way. They also washed the car inside and out. +Good service, good communication, fast, did the little extra."
+          ,"name": "Razan",
+          "stars": 5
+        },
+        {
+          "text": "Left my small car to remove two relatively large scratches in the paint. Got good contact with the staff, he went through the car, asked questions, gave us options and then a reasonable price. Different payment options are available. Picked up the car after about 1.5 weeks and it was in new condition, so well done! Absolutely recommend this company for painting :)"
+        ,"name": "Jessica",
+        "stars": 5
+        },
+        {
+          "text": "Left my car with damage on the entire left side, got it back like new. Really recommend this workshop and very good service."
+        ,              "name": "Amin",
+        "stars": 5
+        },
+        {
+          "text": "Very satisfied customer here! Skilled, fast and at the same time professional in their field. Highly recommend!"
+        ,              "name": "Elias",
+        "stars": 5
+        },
+        {
+          "text": "3rd car I leave to them. My insurance company unfortunately did not cooperate with them. I had to call my insurance company to make an exception since I refuse to leave the car in anyone else's hands but Lackea. If you are looking for fast, professional and extremely good results, you should turn here! Thanks again and look forward to the next visit!"
+        ,              "name": "Loren",
+        "stars": 5
+
+        
+        },
+        {
+          "text": "Good service at a good price."
+        ,              "name": "Kent",
+        "stars": 5
+        },
+        {
+          "text": "Very nice and great job."
+        ,              "name": "Tony",
+        "stars": 5
+        },
+        {
+          "text": "Super good, really satisfied with the result."
+        ,              "name": "Thomas",
+        "stars": 5
+        }
+      ]
+    }
+  
+
+}

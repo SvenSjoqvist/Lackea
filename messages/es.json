@@ -1,0 +1,152 @@
+{
+    "aboutUs": {
+      "title": "Tratamos tu coche como si fuera de nuestra familia",
+      "description": "Ubicados en Botkyrka, al sur de Estocolmo, somos una empresa especializada en la pintura de automóviles con una amplia gama de servicios y fuertes colaboraciones con empresas de alquiler de coches, concesionarios y estaciones de servicio.",
+      "keyPoints": {
+        "point1": "Reparaciones de plástico y chapa",
+        "point2": "Pintura y reparación de ruedas",
+        "point3": "Reemplazo de parabrisas y reparación de astillas",
+        "point4": "Reacondicionamiento general"
+      },
+      "location": {
+        "title": "Botkyrka",
+        "subtitle": "Ubicación estratégica"
+      },
+      "capacity": {
+        "title": "500",
+        "subtitle": "Capacidad de coches"
+      },
+      "customers": {
+        "title": "Clientes particulares y corporativos",
+        "quote": "Cada coche es más que un vehículo, es una historia."
+      }
+    },
+    "BrandLogos": {
+      "title": "Nuestros Socios"
+    },
+    "contact": {
+      "title": "Contáctanos",
+      "address": "Terrängvägen 8, 147 39 Tumba",
+      "email": "info@lackea.se",
+      "directNumber": "Número directo: +46 (0) 70 779 90 26",
+      "switchboard": "Centralita: +46 (0) 8 684 410 20",
+      "openingHours": "De lunes a viernes 8:00 AM - 5:00 PM",
+      "getInTouch": "Ponte en contacto",
+      "fullName": "Nombre completo",
+      "emailPlaceholder": "Correo electrónico",
+      "phonePlaceholder": "Número de teléfono",
+      "messagePlaceholder": "Mensaje",
+      "sendButton": "¡Enviar!"
+    },
+    "CTASection": {
+      "heading": "Por qué elegirnos",
+      "subheading": "Ofrecemos servicios profesionales y confiables que te ponen en el centro.",
+      "reasons": {
+        "experienced": {
+          "title": "Taller de pintura experimentado",
+          "description": "Con muchos años en la industria, garantizamos servicios profesionales y confiables."
+        },
+        "quality": {
+          "title": "Alta calidad y excelente experiencia del cliente",
+          "description": "Siempre nos enfocamos en la calidad y la satisfacción del cliente."
+        },
+        "insurance": {
+          "title": "Colaboramos con muchas compañías de seguros",
+          "description": "Hacemos el proceso más sencillo para ti gracias a nuestras asociaciones con las principales aseguradoras."
+        },
+        "brands": {
+          "title": "Reparamos todas las marcas de coches",
+          "description": "Independientemente de la marca o modelo de coche, podemos ayudarte con la reparación."
+        },
+        "pickup": {
+          "title": "Recogida y entrega",
+          "description": "Al reservar, ofrecemos tanto recogida como entrega en la ubicación de tu elección."
+        },
+        "damage": {
+          "title": "Daños con o sin seguro",
+          "description": "Aceptamos todo tipo de daños, tengas seguro o no."
+        },
+        "service": {
+          "title": "Servicio rápido y garantía",
+          "description": "Ofrecemos reparaciones rápidas y eficientes con garantía de calidad."
+        },
+        "contact": {
+          "title": "Contáctanos",
+          "description": "No dudes en contactarnos para una consulta gratuita o una reserva al +46 (0) 70 779 90 26"
+        }
+      }
+    },
+    "Navbar": {
+      "about": "Sobre nosotros",
+      "services": "Servicios",
+      "contact": "Proceso de reparación",
+      "book": "¡Reserva ahora!"
+    },
+    "ProcessSection": {
+      "title": "Nuestro proceso de reparación de coches",
+      "subtitle": "Con nosotros, tu coche pasa por un proceso minucioso y estructurado para garantizar que reciba el mejor cuidado posible. Conoce más sobre cada paso a continuación.",
+      "steps": {
+        "inspection": {
+          "title": "Inspección de daños",
+          "description": "Comenzamos con una inspección exhaustiva de los daños para identificar todos los desperfectos en tu coche. Ofrecemos opciones flexibles: podemos recoger tu coche en un lugar que te convenga, o puedes traerlo a nuestras instalaciones. Durante la inspección, documentamos los daños y discutimos contigo las reparaciones necesarias. También consideramos cualquier solicitud de tu aseguradora para garantizar un proceso fluido."
+        },
+        "repair": {
+          "title": "Reparación de coches",
+          "description": "Tras la inspección de daños, comenzamos con la reparación de tu coche. Nuestro equipo de técnicos certificados utiliza herramientas modernas y materiales de alta calidad para restaurar tu coche a su estado original. Trabajamos estrechamente contigo y con tu aseguradora para garantizar que todas las reparaciones se realicen según lo acordado. Durante todo el proceso, te mantenemos informado sobre el progreso."
+        },
+        "polishing": {
+          "title": "Pulido y lijado",
+          "description": "Una vez completadas las reparaciones, tu coche pasa a nuestro departamento de pulido. Aquí, lijamos y pulimos las superficies del coche para devolverle su brillo y protección. Usamos productos y técnicas profesionales para garantizar un acabado impecable. Este paso es crucial para darle a tu coche un aspecto renovado y protegerlo de futuros daños."
+        },
+        "qualityControl": {
+          "title": "Control de calidad y entrega",
+          "description": "Antes de entregarte tu coche, realizamos un control de calidad exhaustivo. Verificamos que el color coincida perfectamente, que la pintura sea uniforme y que todas las reparaciones se hayan realizado con los más altos estándares. Después de un lavado final y una inspección detallada, tu coche estará listo para ser devuelto. Nos esforzamos por sorprenderte con un coche que luzca y se sienta como nuevo."
+        }
+      }
+    },
+    "AutoSlider": {
+      "kundrecensioner": "Reseñas de clientes",
+      "reviews": [
+        {
+          "text": "Dejé mi Tesla Model 3 para pintar la tapa del maletero. Pensé que hicieron un gran trabajo. También ajustaron la tapa del maletero para que no se cierre de la misma manera. Además lavaron el coche por dentro y por fuera. +Buen servicio, buena comunicación, rápido, hicieron un poco más de lo esperado.",
+          "name": "Razan",
+          "stars": 5
+        },
+        {
+          "text": "Dejé mi coche pequeño para eliminar dos rasguños relativamente grandes en la pintura. Obtuve buen contacto con el personal, revisaron el coche, hicieron preguntas, nos dieron opciones y luego un precio razonable. Hay diferentes opciones de pago. Recogí el coche después de aproximadamente 1,5 semanas y estaba en perfectas condiciones, ¡muy bien hecho! Absolutamente recomiendo esta empresa para pintar :)",
+          "name": "Jessica",
+          "stars": 5
+        },
+        {
+          "text": "Dejé mi coche con daños en todo el lado izquierdo, lo recuperé como nuevo. Realmente recomiendo este taller y un servicio muy bueno.",
+          "name": "Amin",
+          "stars": 5
+        },
+        {
+          "text": "¡Cliente muy satisfecho aquí! Competentes, rápidos y al mismo tiempo profesionales en su campo. ¡Altamente recomendados!",
+          "name": "Elias",
+          "stars": 5
+        },
+        {
+          "text": "Es el tercer coche que les dejo. Mi compañía de seguros desafortunadamente no coopera con ellos. Tuve que llamar a mi aseguradora para hacer una excepción ya que me niego a dejar mi coche en manos de alguien más que Lackea. ¡Si buscas resultados rápidos, profesionales y extremadamente buenos, debes acudir aquí! ¡Gracias de nuevo y espero la próxima visita!",
+          "name": "Loren",
+          "stars": 5
+        },
+        {
+          "text": "Buen servicio a buen precio.",
+          "name": "Kent",
+          "stars": 5
+        },
+        {
+          "text": "Muy amables y gran trabajo.",
+          "name": "Tony",
+          "stars": 5
+        },
+        {
+          "text": "Súper bien, realmente satisfecho con el resultado.",
+          "name": "Thomas",
+          "stars": 5
+        }
+      ]
+    }
+  }

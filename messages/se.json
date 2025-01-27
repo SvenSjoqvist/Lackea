@@ -1,0 +1,153 @@
+{
+    "aboutUs": {
+      "title": "Vi behandlar din bil som en familj",
+      "description": "Belägen i Botkyrka, söder om Stockholm, är vi en dedikerad billackeringsfirma med ett omfattande tjänsteutbud och starka samarbeten med biluthyrningsfirmor, bilhandlare och bensinstationer.",
+      "keyPoints": {
+        "point1": "Plast- och plåtreparationer",
+        "point2": "Lackering & fälgreparationer",
+        "point3": "Vindrutebyten & stenskottslagning",
+        "point4": "Rekonditionering"
+      },
+      "location": {
+        "title": "Botkyrka",
+        "subtitle": "Strategiskt placerad"
+      },
+      "capacity": {
+        "title": "500",
+        "subtitle": "Bil Kapacitet"
+      },
+      "customers": {
+        "title": "Privat & Företagskunder",
+        "quote": "Varje bil är mer än ett fordon - den är en berättelse."
+      }
+    },
+    "BrandLogos": {
+        "title": "Våra Samarbetspartners"
+      },
+      "contact": {
+        "title": "Kontakta oss",
+        "address": "Terrängvägen 8, 147 39 Tumba",
+        "email": "info@lackea.se",
+        "directNumber": "Direktnummer: +46 (0) 70 779 90 26",
+        "switchboard": "Växel: +46 (0) 8 684 410 20",
+        "openingHours": "Måndag-Fredag 8:00-17:00",
+        "getInTouch": "Komma i kontakt",
+        "fullName": "Fullständigt namn",
+        "emailPlaceholder": "E-post",
+        "phonePlaceholder": "Telefonnummer",
+        "messagePlaceholder": "Meddelande",
+        "sendButton": "Skicka!"
+      },
+      "CTASection": {
+        "heading": "Därför ska ni välja oss",
+        "subheading": "Vi erbjuder professionella och pålitliga tjänster som sätter dig i fokus.",
+        "reasons": {
+          "experienced": {
+            "title": "Erfaren målarverkstad",
+            "description": "Med många år i branschen garanterar vi professionella och pålitliga tjänster."
+          },
+          "quality": {
+            "title": "Hög kvalitet och utmärkt kundupplevelse",
+            "description": "Vi sätter alltid kvalitet och kundnöjdhet i fokus."
+          },
+          "insurance": {
+            "title": "Samarbetar med många försäkringsbolag",
+            "description": "Vi gör processen smidig för dig genom våra partnerskap med ledande försäkringsbolag."
+          },
+          "brands": {
+            "title": "Reparerar alla bilmärken",
+            "description": "Oavsett bilmärke eller modell kan vi hjälpa dig med reparationen."
+          },
+          "pickup": {
+            "title": "Hämtning och återlämning",
+            "description": "Vid bokning erbjuder vi både hämtning och återlämning till den plats du önskar."
+          },
+          "damage": {
+            "title": "Skador med eller utan försäkring",
+            "description": "Vi tar emot alla typer av skador, oavsett om du har försäkring eller inte."
+          },
+          "service": {
+            "title": "Snabb service och garanti",
+            "description": "Vi erbjuder snabba och effektiva reparationer med kvalitetsgaranti."
+          },
+          "contact": {
+            "title": "Kontakta oss",
+            "description": "Tveka inte att höra av dig för en kostnadsfri konsultation eller bokning på +46 (0) 70 779 90 26"
+          }
+        }
+      },
+      "Navbar": {
+        "about": "Om oss",
+        "services": "Tjänster",
+        "contact": "Vår process",
+        "book": "Boka nu!"
+      },
+      "ProcessSection": {
+        "title": "Vår Process för Bilreparation",
+        "subtitle": "Hos oss genomgår din bil en noggrann och strukturerad process för att säkerställa att den får den bästa möjliga vården. Läs mer om varje steg nedan.",
+        "steps": {
+          "inspection": {
+            "title": "Skadebesiktning",
+            "description": "Vi börjar med en noggrann skadebesiktning för att identifiera alla skador på din bil. Vi erbjuder flexibla alternativ: antingen hämtar vi din bil på en plats som passar dig, eller så kan du lämna den hos oss. Under besiktningen dokumenterar vi skadorna och diskuterar med dig vilka reparationer som behövs. Vi tar även hänsyn till eventuella önskemål från ditt försäkringsbolag för att säkerställa en smidig process."
+          },
+          "repair": {
+            "title": "Bilreparation",
+            "description": "Efter skadebesiktningen påbörjar vi reparationen av din bil. Vårt team av certifierade tekniker använder moderna verktyg och högkvalitativa material för att återställa din bil till dess ursprungliga skick. Vi samarbetar nära med dig och ditt försäkringsbolag för att säkerställa att alla reparationer utförs enligt överenskommelsen. Under hela processen håller vi dig informerad om framstegen."
+          },
+          "polishing": {
+            "title": "Polering och Slipning",
+            "description": "När reparationerna är klara går din bil till vår poleringsavdelning. Här slipar och polerar vi bilens ytor för att återställa dess glans och skydd. Vi använder professionella produkter och tekniker för att säkerställa en fläckfri finish. Detta steg är avgörande för att ge din bil en fräsch och som ny look, samt för att skydda den mot framtida skador."
+          },
+          "qualityControl": {
+            "title": "Kvalitetskontroll och Leverans",
+            "description": "Innan vi levererar din bil utför vi en noggrann kvalitetskontroll. Vi kontrollerar att färgen matchar perfekt, att lacken är slät och att alla reparationer är utförda enligt högsta standard. Efter en sista tvätt och detaljgranskning är din bil redo att återvända till dig. Vi strävar efter att överraska dig med en bil som ser och känns som ny."
+          }
+        }
+      },
+      "AutoSlider": {
+        "kundrecensioner": "Kundrecensioner",
+        "reviews": [
+            {
+              "text": "Lämnade min Tesla model 3 för lackering av bagageluckan. Tyckte att de gjorde ett jättefint jobb. De justerade även bagageluckan så att den inte slår igen på samma sätt. De tvättade även bilen in och utvändigt. +Bra service, bra kommunikation, snabba, gjorde det lilla extra.",
+              "name": "Razan",
+              "stars": 5
+            },
+            {
+              "text": "Lämnade in min lilla bil för att ta bort två relativt stora repor i lacken. Fick bra kontakt med personalen, han gick igenom bilen, ställde frågor, gav oss alternativ och sedan ett pris som lät rimligt. Olika betalningsalternativ finns. Hämtade bilen efter ca 1.5 veckor och den var i nyskick, så bra utförande! Rekommenderar absolut denna firma för lackering :)",
+              "name": "Jessica",
+              "stars": 5
+            },
+            {
+              "text": "Lämna in min bil med en skada på hela vänster sida, fick tillbaka bilen ny. Rekommenderar verkligen denna verkstaden och mycket bra service.",
+              "name": "Amin",
+              "stars": 5
+            },
+            {
+              "text": "Väldigt nöjd kund här! Duktiga, snabba och samtidigt professionella i deras område. Rekommenderar starkt!",
+              "name": "Elias",
+              "stars": 5
+            },
+            {
+              "text": "3e bilen jag lämnar in till dom. Mitt försäkringsbolag samarbetade tyvärr inte med dem. Jag fick ringa mitt försäkringsbolag för att göra ett undantag då jag vägrar lämna bilen i någon annans händer än lackea. Söker ni snabb, proffsig och sjukt bra resultat så ska ni vända er hit! Tack återigen och ser fram emot nästa besök!",
+              "name": "Loren",
+              "stars": 5
+            },
+            {
+              "text": "Bra service till ett bra pris",
+              "name": "Kent",
+              "stars": 5
+            },
+            {
+              "text": "Mycket trevliga o kanon jobb.",
+              "name": "Tony",
+              "stars": 5
+            },
+            {
+              "text": "Superbra, riktigt nöjd med resultatet",
+              "name": "Thomas",
+              "stars": 5
+            }
+          ]
+      
+      }
+  }

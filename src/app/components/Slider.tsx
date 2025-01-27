@@ -2,57 +2,25 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// Customer reviews data
-const reviews = [
-  {
-    name: "Razan",
-    text: "Lämnade min Tesla model 3 för lackering av bagageluckan. Tyckte att de gjorde ett jättefint jobb. De justerade även bagageluckan så att den inte slår igen på samma sätt. De tvättade även bilen in och utvändigt. +Bra service, bra kommunikation, snabba, gjorde det lilla extra.",
-    stars: 5,
-  },
-  {
-    name: "Jessica",
-    text: "Lämnade in min lilla bil för att ta bort två relativt stora repor i lacken. Fick bra kontakt med personalen, han gick igenom bilen, ställde frågor, gav oss alternativ och sedan ett pris som lät rimligt. Olika betalningsalternativ finns. Hämtade bilen efter ca 1.5 veckor och den var i nyskick, så bra utförande! Rekommenderar absolut denna firma för lackering :)",
-    stars: 5,
-  },
-  {
-    name: "Amin",
-    text: "Lämna in min bil med en skada på hela vänster sida, fick tillbaka bilen ny. Rekommenderar verkligen denna verkstaden och mycket bra service.",
-    stars: 5,
-  },
-  {
-    name: "Elias",
-    text: "Väldigt nöjd kund här! Duktiga, snabba och samtidigt professionella i deras område. Rekommenderar starkt!",
-    stars: 5,
-  },
-  {
-    name: "Loren",
-    text: "3e bilen jag lämnar in till dom. Mitt försäkringsbolag samarbetade tyvärr inte med dem. Jag fick ringa mitt försäkringsbolag för att göra ett undantag då jag vägrar lämna bilen i någon annans händer än lackea. Söker ni snabb, proffsig och sjukt bra resultat så ska ni vända er hit! Tack återigen och ser fram emot nästa besök!",
-    stars: 5,
-  },
-  {
-    name: "Kent",
-    text: "Bra service till ett bra pris",
-    stars: 5,
-  },
-  {
-    name: "Tony",
-    text: "Mycket trevliga o kanon jobb.",
-    stars: 5,
-  },
-  {
-    name: "Thomas",
-    text: "Superbra, riktigt nöjd med resultatet",
-    stars: 5,
-  },
-];
+// Type definition for review items
+interface Review {
+  text: string;
+  name: string;
+  stars: number; // Add stars property
+}
 
 // AutoSlider Component
 const AutoSlider = () => {
+  const t = useTranslations("AutoSlider");
   const [currentReview, setCurrentReview] = useState(0);
+
+  // Type the reviews array
+  const reviews: Review[] = t.raw("reviews");
 
   useEffect(() => {
     // Auto-slide every 5 seconds
@@ -61,7 +29,7 @@ const AutoSlider = () => {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [reviews.length]);
 
   useEffect(() => {
     // GSAP animation for sliding reviews
@@ -91,13 +59,13 @@ const AutoSlider = () => {
       {/* Review content */}
       <div className="review-content absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center z-20 px-8">
         <div className="max-w-2xl mx-auto">
-          {/* Swedish Title for Reviews */}
+          {/* Title for Reviews */}
           <h2 className="text-3xl font-bold text-white mb-6">
-            Kundrecensioner
+            {t("kundrecensioner")}
           </h2>
           <p className="text-xl text-gray-200 mb-6">{reviews[currentReview].text}</p>
           <div className="flex justify-center space-x-2 mb-4">
-            {[...Array(reviews[currentReview].stars)].map((_, i) => (
+            {[...Array(reviews[currentReview].stars)].map((_, i: number) => (
               <span key={i} className="text-yellow-400 text-2xl">★</span>
             ))}
           </div>
@@ -109,7 +77,7 @@ const AutoSlider = () => {
 
       {/* Dots for navigation */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
-        {reviews.map((_, i) => (
+        {reviews.map((_, i: number) => (
           <button
             key={i}
             onClick={() => setCurrentReview(i)}
