@@ -150,6 +150,12 @@
         "stars": 5
         }
       ]
+    },
+    "footer": {
+      "companyName": "Lackea AB",
+      "aboutUs": "About Us",
+      "services": "Services",
+      "contact": "Contact"
     }
   
 

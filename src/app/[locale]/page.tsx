@@ -2,6 +2,7 @@ import AboutUsSection from "../components/about";
 import BrandsSection from "../components/Brands";
 import Contact from "../components/Contact";
 import CTASection from "../components/CTASection";
+import Footer from "../components/Footer";
 import Hero from "../components/HeroIdea";
 import Navbar from "../components/Navbar";
 import ProcessSection from "../components/Process";
@@ -18,6 +19,7 @@ export default function Home() {
       <BrandsSection />
       <ProcessSection />
       <Contact />
+      <Footer />
 </div>
   )
 }

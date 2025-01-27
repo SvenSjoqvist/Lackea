@@ -1,5 +1,5 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MapPin, Mail, Phone, MessageCircleIcon, Send, Clock } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
@@ -11,6 +11,14 @@ const ContactSection: React.FC = () => {
     phone: '',
     message: ''
   });
+
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    // Check if the user is on an iOS device
+    const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    setIsIOS(isIphone);
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -25,10 +33,25 @@ const ContactSection: React.FC = () => {
     console.log(formData);
   };
 
-  const openMaps = () => {
-    const address = "Terrängvägen 8, 147 39 Tumba, Sweden";
-    const encodedAddress = encodeURIComponent(address);
-    window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+  const openLocation = () => {
+    const latitude = 59.1959331;
+    const longitude = 17.8755517;
+    const locationUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+    if (isIOS) {
+      // On iOS, open a menu to select either Apple Maps or Google Maps
+      const appleMapsUrl = `maps:${latitude},${longitude}`;
+      const googleMapsUrl = `comgooglemaps://?q=${latitude},${longitude}`;
+
+      // Try Google Maps first, then fallback to Apple Maps
+      window.location.href = googleMapsUrl;
+      setTimeout(() => {
+        window.location.href = appleMapsUrl;
+      }, 25);
+    } else {
+      // On Android or other platforms, use Google Maps
+      window.open(locationUrl, '_blank');
+    }
   };
 
   return (
@@ -42,7 +65,7 @@ const ContactSection: React.FC = () => {
             </h2>
             <div className="space-y-4 mb-6">
               <div 
-                onClick={openMaps} 
+                onClick={openLocation} 
                 className="flex items-center text-gray-300 hover:text-white cursor-pointer transition-colors"
               >
                 <MapPin className="mr-2 text-green-400" />
@@ -58,31 +81,39 @@ const ContactSection: React.FC = () => {
                 </a>
               </div>
               <div>
-                <div className="flex items-center">
-                  <Phone className="mr-2 text-yellow-400" />
-                  <a 
-                    href="tel:+46707799026" 
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('directNumber')}
-                  </a>
-                </div>
-                <div className="flex items-center ml-6">
-                  <a 
-                    href="tel:+46866441020" 
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('switchboard')}
-                  </a>
+                {/* Phone Numbers */}
+                <div className="flex items-start mb-4">
+                  <Phone className="mr-3 text-yellow-400 mt-3" />
+                  <div className="flex flex-col">
+                    <a 
+                      href="tel:+46707799026" 
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      {t('directNumber')}
+                    </a>
+                    <a 
+                      href="tel:+46866441020" 
+                      className="text-gray-300 hover:text-white transition-colors"
+                    >
+                      {t('switchboard')}
+                    </a>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center text-gray-400">
                 <Clock className="mr-2 text-purple-400" />
                 {t('openingHours')}
               </div>
-            </div>
-            <div className="flex space-x-4 justify-center mt-6">
-              <a href="#" className="text-gray-400 hover:text-green-500 transition-colors"><MessageCircleIcon /></a>
+              {/* WhatsApp Contact */}
+              <div className="flex items-center space-x-2 mt-4">
+                <MessageCircleIcon className="text-green-500" />
+                <a 
+                  href="https://wa.me/46707799026" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  WhatsApp
+                </a>
+              </div>
             </div>
           </div>
 

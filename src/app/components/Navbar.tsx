@@ -31,7 +31,7 @@ export default function Navbar() {
     <div className="fixed top-0 left-0 w-full flex flex-row items-center justify-between h-20 bg-gray-800 text-white px-4 sm:px-8 border-b-2 border-gray-700 z-50">
       {/* Logo */}
       <div className="flex-shrink-0 h-full flex items-center">
-        <Link href="/">
+        <Link href="/" aria-label="Go to homepage">
           <div className="hover:opacity-80 transition-opacity transform hover:scale-105 duration-300">
             <AnimatedLogo />
           </div>
@@ -65,6 +65,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "sv" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to Swedish"
               >
                 Svenska
               </div>
@@ -76,6 +77,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "en" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to English"
               >
                 English
               </div>
@@ -87,6 +89,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "ar" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to Arabic"
               >
                 العربية
               </div>
@@ -98,6 +101,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "es" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to Spanish"
               >
                 Español
               </div>
@@ -109,8 +113,7 @@ export default function Navbar() {
         <button
           onClick={toggleMenu}
           className="text-white focus:outline-none"
-          aria-label="Toggle Menu"
-          aria-expanded={isMenuOpen}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -128,6 +131,7 @@ export default function Navbar() {
           href="#om-oss"
           className="block sm:inline-block text-lg font-medium hover:text-gray-400 transition-colors duration-300 py-2 sm:py-0 px-4 sm:px-0 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r from-yellow-400 to-orange-500 hover:after:w-full after:transition-all after:duration-300"
           onClick={() => setIsMenuOpen(false)}
+          aria-label="About Us"
         >
           {t("about")}
         </Link>
@@ -135,6 +139,7 @@ export default function Navbar() {
           href="#tjanster"
           className="block sm:inline-block text-lg font-medium hover:text-gray-400 transition-colors duration-300 py-2 sm:py-0 px-4 sm:px-0 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r from-yellow-400 to-orange-500 hover:after:w-full after:transition-all after:duration-300"
           onClick={() => setIsMenuOpen(false)}
+          aria-label="Services"
         >
           {t("services")}
         </Link>
@@ -142,6 +147,7 @@ export default function Navbar() {
           href="#process"
           className="block sm:inline-block text-lg font-medium hover:text-gray-400 transition-colors duration-300 py-2 sm:py-0 px-4 sm:px-0 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r from-yellow-400 to-orange-500 hover:after:w-full after:transition-all after:duration-300"
           onClick={() => setIsMenuOpen(false)}
+          aria-label="Process"
         >
           {t("contact")}
         </Link>
@@ -149,6 +155,7 @@ export default function Navbar() {
           href="#kontakt"
           className="block sm:inline-block bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-lg hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 mt-4 sm:mt-0 mx-4 sm:mx-0 text-center"
           onClick={() => setIsMenuOpen(false)}
+          aria-label="Book a Consultation"
         >
           {t("book")}
         </Link>
@@ -181,6 +188,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "sv" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to Swedish"
               >
                 Svenska
               </div>
@@ -192,6 +200,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "en" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to English"
               >
                 English
               </div>
@@ -203,6 +212,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "ar" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to Arabic"
               >
                 العربية
               </div>
@@ -214,6 +224,7 @@ export default function Navbar() {
                 className={`cursor-pointer block w-full text-left px-4 py-2 hover:bg-gray-700 ${
                   locale === "es" ? "font-bold text-yellow-400" : ""
                 }`}
+                aria-label="Switch to Spanish"
               >
                 Español
               </div>

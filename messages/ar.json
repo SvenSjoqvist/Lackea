@@ -148,5 +148,13 @@
             "stars": 5
         }
     ]
-}
+},
+
+    "footer": {
+      "companyName": "لاكيا AB",
+      "aboutUs": "معلومات عنا",
+      "services": "الخدمات",
+      "contact": "اتصل بنا"
+    }
+  
 }
