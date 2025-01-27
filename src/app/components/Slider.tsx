@@ -1,17 +1,13 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations } from "next-intl";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 // Type definition for review items
 interface Review {
   text: string;
   name: string;
-  stars: number; // Add stars property
+  stars: number;
 }
 
 // AutoSlider Component
@@ -38,26 +34,12 @@ const AutoSlider = () => {
       { opacity: 0, y: 50 },
       { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
     );
-
-    // Parallax effect for the background
-    gsap.to(".slider-bg", {
-      y: "-10%",
-      scrollTrigger: {
-        trigger: ".auto-slider",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
   }, [currentReview]);
 
   return (
     <div className="auto-slider relative w-full h-[500px] overflow-hidden bg-gray-900">
-      {/* Overlay for better text visibility */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 z-10"></div>
-
       {/* Review content */}
-      <div className="review-content absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center z-20 px-8">
+      <div className="review-content absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center px-8">
         <div className="max-w-2xl mx-auto">
           {/* Title for Reviews */}
           <h2 className="text-3xl font-bold text-white mb-6">
@@ -76,7 +58,7 @@ const AutoSlider = () => {
       </div>
 
       {/* Dots for navigation */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-30">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
         {reviews.map((_, i: number) => (
           <button
             key={i}
@@ -84,6 +66,7 @@ const AutoSlider = () => {
             className={`w-3 h-3 rounded-full ${
               i === currentReview ? "bg-blue-600" : "bg-gray-700"
             }`}
+            aria-label={`Go to slide ${i + 1}`} // Accessible name for screen readers
           />
         ))}
       </div>

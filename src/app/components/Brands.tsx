@@ -26,14 +26,15 @@ const BrandLogos = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-center">
           {brands.map((brand, index) => (
             <div key={index} className="flex justify-center items-center">
-              <Image
-                src={brand.logo}
-                alt={brand.name}
-                width={150}
-                height={80}
-                className="object-contain"
-              />
-            </div>
+  <Image
+    src={brand.logo}
+    alt={brand.name}
+    width={150}   // Fixed width
+    height={80}   // Fixed height
+    className="object-contain w-[150px] h-[80px]"
+  />
+</div>
+
           ))}
         </div>
       </div>
