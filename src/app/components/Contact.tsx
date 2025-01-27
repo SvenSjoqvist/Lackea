@@ -34,25 +34,32 @@ const ContactSection: React.FC = () => {
   };
 
   const openLocation = () => {
-    const latitude = 59.1959331;
-    const longitude = 17.8755517;
-    const locationUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
-
-    if (isIOS) {
-      // On iOS, open a menu to select either Apple Maps or Google Maps
-      const appleMapsUrl = `maps:${latitude},${longitude}`;
-      const googleMapsUrl = `comgooglemaps://?q=${latitude},${longitude}`;
-
-      // Try Google Maps first, then fallback to Apple Maps
-      window.location.href = googleMapsUrl;
-      setTimeout(() => {
-        window.location.href = appleMapsUrl;
-      }, 25);
-    } else {
-      // On Android or other platforms, use Google Maps
-      window.open(locationUrl, '_blank');
-    }
-  };
+    const locationUrl = `https://www.google.com/maps?q=Lackea+AB`; // Replace with the direct link to Lackea AB's location
+      if (isIOS) {
+        // On iOS, prompt the user to choose between Apple Maps and Google Maps
+        const appleMapsUrl = `maps:?q=Lackea+AB`; // Replace with the direct link to Lackea AB's location
+        const googleMapsUrl = `comgooglemaps://?q=Lackea+AB`; // Replace with the direct link to Lackea AB's location
+    
+        const userChoice = window.confirm("Open location in Apple Maps or Google Maps?\n\nClick 'OK' for Apple Maps or 'Cancel' for Google Maps.");
+    
+        if (userChoice) {
+          // User chose Apple Maps
+          window.location.href = appleMapsUrl;
+        } else {
+          // User chose Google Maps
+          window.location.href = googleMapsUrl;
+          // Fallback to Apple Maps if Google Maps is not installed
+          setTimeout(() => {
+            if (!document.hidden) {
+              window.location.href = appleMapsUrl;
+            }
+          }, 25);
+        }
+      } else {
+        // On Android or other platforms, use Google Maps
+        window.open(locationUrl, '_blank');
+      }
+    };
 
   return (
     <section id="kontakt" className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 md:py-16">
@@ -113,6 +120,18 @@ const ContactSection: React.FC = () => {
                 >
                   WhatsApp
                 </a>
+              </div>
+              {/* Google Maps Embed */}
+              <div className="mt-6 rounded-lg overflow-hidden shadow-lg h-64 md:h-80">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2043.201257290223!2d17.87297677723146!3d59.195933074550005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f71965204ee8d%3A0x669e280c3c3c7d92!2sLackea%20AB!5e0!3m2!1snl!2ses!4v1738000299301!5m2!1snl!2ses"
+                  height="100%"
+                  width="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
               </div>
             </div>
           </div>
