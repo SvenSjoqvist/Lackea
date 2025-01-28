@@ -72,7 +72,7 @@ const Hero = () => {
       <div className="hero-bg absolute top-0 left-0 w-full h-[120%] overflow-hidden">
         <div className="hero-bg-inner relative w-full h-full">
           <Image
-            src="/Hero.webp"
+            src="https://res.cloudinary.com/dwji0hjcg/image/upload/f_auto,q_auto/Herotest_lp7yp4"
             alt="Car Painting Garage"
             fill
             priority
