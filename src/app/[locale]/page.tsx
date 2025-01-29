@@ -3,7 +3,6 @@ import { Suspense } from 'react';
 
 // Import the Navbar and Hero statically as you don't want them to be lazy-loaded
 import Navbar from "../components/Navbar";
-import Hero from "../components/HeroIdea";
 
 // Dynamically import the other components
 const AboutUsSection = dynamic(() => import("../components/about"));
@@ -12,7 +11,9 @@ const Contact = dynamic(() => import("../components/Contact"));
 const CTASection = dynamic(() => import("../components/CTASection"));
 const Footer = dynamic(() => import("../components/Footer"));
 const ProcessSection = dynamic(() => import("../components/Process"));
+const Hero = dynamic(() => import("../components/HeroIdea"));
 const AutoSlider = dynamic(() => import("../components/Slider"));
+
 
 export default function Home() {
   return (
