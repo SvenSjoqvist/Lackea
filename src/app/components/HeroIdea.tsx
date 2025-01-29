@@ -69,7 +69,7 @@ const Hero = () => {
             src="https://res.cloudinary.com/dwji0hjcg/image/upload/c_fill,w_1920,h_1080,f_auto,q_auto/Herotest_lp7yp4"
             alt="Car Painting Garage"
             fill
-            priority
+            loading="lazy"
             quality={70}
             placeholder="blur"
             blurDataURL="https://res.cloudinary.com/dwji0hjcg/image/upload/e_blur:2000,q_1,w_20/Herotest_lp7yp4"
