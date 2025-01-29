@@ -53,14 +53,6 @@ const Hero = () => {
         end: "bottom top",
         scrub: true,
       });
-
-      gsap.to(".hero-title", {
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        textShadow: "0 0 10px rgba(255,255,255,0.8)",
-      });
     }
   }, [isLoading]);
 
@@ -69,7 +61,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="hero-section relative w-full h-screen overflow-hidden">
+    <div className="hero-section relative w-full h-screen overflow-hidden font-sans">
       {/* Background container */}
       <div className="hero-bg absolute top-0 left-0 w-full h-[120%] overflow-hidden">
         <div className="hero-bg-inner relative w-full h-full">
@@ -78,7 +70,7 @@ const Hero = () => {
             alt="Car Painting Garage"
             fill
             priority
-            quality={70} // Optimized quality
+            quality={70}
             placeholder="blur"
             blurDataURL="https://res.cloudinary.com/dwji0hjcg/image/upload/e_blur:2000,q_1,w_20/Herotest_lp7yp4"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -107,7 +99,7 @@ const Hero = () => {
           {t("subtitle")}
         </p>
         <Link href="#kontakt" passHref>
-          <button className="hero-button bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors opacity-0">
+          <button className="hero-button bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 px-6 rounded-lg hover:from-yellow-500 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 mt-4 sm:mt-0 mx-4 sm:mx-0 text-center">
             {t("button")}
           </button>
         </Link>

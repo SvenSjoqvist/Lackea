@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
-  const t = useTranslations("Navbar");
+  const t = useTranslations("navbar");
   const locale = useLocale();
   const router = useRouter();
 

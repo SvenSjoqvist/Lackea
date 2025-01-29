@@ -12,7 +12,7 @@ interface Review {
 
 // AutoSlider Component
 const AutoSlider = () => {
-  const t = useTranslations("AutoSlider");
+  const t = useTranslations("autoSlider");
   const [currentReview, setCurrentReview] = useState(0);
 
   // Type the reviews array

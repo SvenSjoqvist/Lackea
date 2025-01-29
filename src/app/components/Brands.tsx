@@ -12,7 +12,7 @@ const brands = [
 
 const BrandLogos = () => {
   // Fetch translations for the "BrandLogos" namespace
-  const t = useTranslations("BrandLogos");
+  const t = useTranslations("brandLogos");
 
   return (
     <div className="brand-logos bg-white py-12">

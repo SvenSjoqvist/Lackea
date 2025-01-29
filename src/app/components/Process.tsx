@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 const ProcessSection = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
-  const t = useTranslations("ProcessSection");
+  const t = useTranslations("processSection");
 
   const steps = [
     {
